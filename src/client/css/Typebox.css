@@ -1,7 +1,9 @@
 .text-wrap {
-  background-color: blanchedalmond;
+  background-color: #96E072;
   height: 12em;
   position:relative;
+  padding:20px;
+  font-size:1.8em;
 }
 .text-wrap textarea{
   width:95%;
@@ -13,8 +15,17 @@
   resize: none;
 }
 .spans {
-  background-color:orange;
+
+}
+.current-span{
+  -webkit-animation: blink 1s infinite linear;
 }
 .dead-span{
-  background-color:green;
+  background-color:#134611;
+  color:#EEE5E9;
+}
+
+@-webkit-keyframes blink {
+  0% {background-color:black; color:white;}
+  100% {background-color:none; color:black;}
 }

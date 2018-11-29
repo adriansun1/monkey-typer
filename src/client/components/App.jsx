@@ -49,6 +49,7 @@ export default class App extends Component {
       lettArrs.push(" ");
     });
     const classArrs = new Array(lettArrs.length).fill("spans");
+    classArrs[0] = "current-span";
     this.setState({ lettArrs: lettArrs, classArrs: classArrs });
   };
 
@@ -61,12 +62,14 @@ export default class App extends Component {
     if (TypeGame.checkLetter(e.target.value)) {
       const newClassArrs = this.state.classArrs;
       newClassArrs[this.state.spanIndex] = "dead-span";
-      const newSpanIndex = this.state.spanIndex += 1;
+      this.state.lettArrs[this.state.spanIndex + 1] === " "
+        ? (newClassArrs[this.state.spanIndex + 2] = "current-span")
+        : (newClassArrs[this.state.spanIndex + 1] = "current-span");
+      const newSpanIndex = (this.state.spanIndex += 1);
       // if(this.state.spanIndex === this.state.lettArrs.length){
 
-
       // }
-      this.setState({classArrs : newClassArrs, spanIndex :newSpanIndex})
+      this.setState({ classArrs: newClassArrs, spanIndex: newSpanIndex });
     }
   };
 
@@ -86,6 +89,7 @@ export default class App extends Component {
         <button onClick={() => this.chooseBook(shittyDB)}>
           Pride and Prejudice
         </button>
+        <BookButtons />
         <Typebox
           handleKeys={this.handleKeys}
           currentSection={this.state.currentSection}
