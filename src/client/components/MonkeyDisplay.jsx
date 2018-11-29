@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import '../css/Main.css'
 
 
 export default class MonkeyDisplay extends Component {
   render() {
     return (
-      <div>
-        <h1>monkey display</h1>
+      <div className="m-display">
+        <p>monkey display placeholder</p>
       </div>
     )
   }

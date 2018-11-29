@@ -7,12 +7,20 @@ module.exports = {
     filename: "bundle.js",
     path: path.join(__dirname, "/build/")
   },
+  devServer: {
+    publicPath:'http://localhost:8080/',
+    compress:true,
+    // historyApiFallback: true
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [{ loader: "babel-loader" }],
-        exclude: /node_modules/
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        query: {
+          plugins: ['@babel/plugin-proposal-class-properties']
+        },
       },
       {
         test: /\.css$/,
@@ -21,7 +29,15 @@ module.exports = {
       },
       {
         test: /\.jsx$/,
-        use: [{ loader: "babel-loader" }],
+        loader: "babel-loader",
+        query: {
+          plugins: ['@babel/plugin-proposal-class-properties']
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: [{ loader: "url-loader?limit=8192" }],
         exclude: /node_modules/
       }
     ]
@@ -32,8 +48,4 @@ module.exports = {
       filename: "index.html"
     })
   ],
-  devServer: {
-    contentBase: path.join(__dirname, "build"),
-    historyApiFallback: true
-  }
 };

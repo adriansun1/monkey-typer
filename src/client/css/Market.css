@@ -1,0 +1,45 @@
+
+.m-display {
+  background-color: purple;
+  height: 10em;
+}
+
+#market {
+  background-color: maroon;
+  flex-grow: 0.5;
+}
+
+#market-wrap {
+  background-color: black;
+  display: flex;
+  height: 20em;
+  align-items:center;
+}
+
+#banana-wrap{
+  background-color: blue;
+  flex-grow: 0.5;
+  height:15em;
+}
+
+#banana{
+  display: block;
+  margin:auto;
+  height:100%;
+  -webkit-animation: spin 3s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}   
+}
+/* @-webkit-keyframes shake {
+  0%  {-webkit-transform: translate(1em,0);}
+  100%  {-webkit-transform: translate(0,10em);}
+} */
+
+
+#market-placeholder {
+  background-color: black;
+  flex-grow: 1;
+}
