@@ -2,7 +2,7 @@ class TypeGame {
   constructor() {
     this.book = '';
     this.readUpTo = 0;
-    this.amountWordsToLoad = 20;
+    this.amountWordsToLoad = 30;
     this.currentWord;
     this.letterIndex = 0;
     this.wordIndex = 0;

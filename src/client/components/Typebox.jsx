@@ -8,6 +8,7 @@ export default class Typebox extends Component {
     super(props);
   }
 
+
   render() {
     const spans = [];
     for(let i = 0; i< this.props.lettArrs.length; i+=1){

@@ -1,30 +1,37 @@
 
-.m-display {
-  background-color: purple;
+.monkey-display {
+  background-color: white;
   height: 10em;
+  border: 3px solid yellow;
+  position:relative;
+  margin:5px;
 }
+
 
 #market {
   background-color: maroon;
   flex-grow: 0.5;
+  height:100%;
 }
 
 #market-wrap {
-  background-color: black;
+  background-color: green;
   display: flex;
-  height: 20em;
-  align-items:center;
+  align-items:top;
+  height:30em;
 }
 
 #banana-wrap{
-  background-color: blue;
+  background-color: lightgrey;
   flex-grow: 0.5;
   height:15em;
+  text-align: center;
 }
 
 #banana{
   display: block;
   margin:auto;
+  padding:0;
   height:100%;
   -webkit-animation: spin 3s infinite linear;
 }
@@ -39,7 +46,3 @@
 } */
 
 
-#market-placeholder {
-  background-color: black;
-  flex-grow: 1;
-}
