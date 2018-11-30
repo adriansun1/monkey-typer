@@ -9,8 +9,12 @@ const MonkeyOptions = props => (
   <div className="monkey-option">
     <img src={props.monkey.pic} alt="cant be asked to fill this out" />
     <h2>{props.monkey.name}</h2>
-    <h4>price: {props.monkey.price}</h4>
-    <h4>#: {props.monkey.existing}</h4>
+    <span id='info-display'>
+      <h4>Price: {props.monkey.price}</h4>
+      <h4>You Have: {props.monkey.existing}</h4>
+      <h4>WPM: {props.monkey.wpm}</h4>
+
+    </span>
 
     <button
       onClick={() => {

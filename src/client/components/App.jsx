@@ -8,6 +8,9 @@ import shittyDB from "../../server/db/shittydb.json";
 import BookButtons from "./BookButtons.jsx";
 const chimp = require("../img/chimp-monkey.jpg");
 const smart = require("../img/smart-monkey.jpg");
+const toddler = require('../img/toddler.jpg')
+const grandma = require('../img/grandma.jpg')
+const computer = require('../img/computer.jpg')
 
 export default class App extends Component {
   constructor(props) {
@@ -18,28 +21,54 @@ export default class App extends Component {
       classArrs: [],
       monkeyMarketArr: {
         Chimpanzee: {
-          pic: smart,
+          pic: chimp,
           name: "Chimpanzee",
           multiplier: 1.15,
           existing: 0,
-          price: 8
+          price: 8,
+          wpm:1
         },
         Orangutan: {
-          pic: chimp,
+          pic: smart,
           name: "Orangutan",
           multiplier: 1.1,
           existing: 0,
-          price: 40
-        }
+          price: 40,
+          wpm:5
+        },
+        Toddler: {
+          pic: toddler,
+          name: "Toddler",
+          multiplier: 1.2,
+          existing: 0,
+          price: 100,
+          wpm:15
+        },
+        Grandma: {
+          pic: grandma,
+          name: "Grandma",
+          multiplier: 1.4,
+          existing: 0,
+          price: 300,
+          wpm:30
+        },
+        Computer: {
+          pic: computer,
+          name: "Computer",
+          multiplier: 2,
+          existing: 0,
+          price: 3000,
+          wpm:300
+        },
       },
       monkeyBoughtArr: [],
       spanIndex: 0,
-      totalBananas: 0
+      totalBananas: 100
     };
   }
 
   componentDidMount() {
-    console.log("componentdidmount");
+    setInterval(this.getPaid,500);
   }
   componentDidUpdate() {
     console.log("updated");
@@ -132,6 +161,15 @@ export default class App extends Component {
     this.state.currentSection = cs;
     this.createSpans();
   };
+
+  getPaid = () =>{
+    let newTotalBananas = 0;
+    const keys = Object.keys(this.state.monkeyMarketArr);
+    for(let i = 0; i < keys.length; i+= 1){
+      newTotalBananas += ((this.state.monkeyMarketArr[keys[i]].wpm)/120 * this.state.monkeyMarketArr[keys[i]].existing);
+    }
+    this.setState({totalBananas: this.state.totalBananas + newTotalBananas})
+  }
 
   render() {
     return (
