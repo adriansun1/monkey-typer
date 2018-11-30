@@ -98,8 +98,6 @@ export default class App extends Component {
   };
 
   createSpans = () => {
-    console.log("creating spans");
-    console.log(this.state.currentSection)
     const lettArrs = [];
     this.state.currentSection.forEach(el => {
       const letters = el.split("");
@@ -114,8 +112,6 @@ export default class App extends Component {
   };
 
   handleKeys = e => {
-    console.log('keypress: '+ e.target.value)
-
     //this could be refactored
     if (this.state.lettArrs[this.state.spanIndex] === " ") {
       if (e.target.value === " ") {
@@ -175,7 +171,7 @@ export default class App extends Component {
     return (
       <div id="App">
         <h1>Monkey Typewriter</h1>
-        <p>wut {this.state.totalBananas}</p>
+        {/* <p>wut {this.state.totalBananas}</p> */}
         <button onClick={() => this.chooseBook(shittyDB)}>
           Pride and Prejudice
         </button>

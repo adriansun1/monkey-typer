@@ -1,12 +1,11 @@
 .monkey-option {
   height: 5em;
   border: 2px solid #181818;
-  border-radius: 3px 25px;
   background-color: #def4c6;
   display: flex;
 }
 .monkey-option img {
-  width: 100px;
+  width: 150px;;
   flex-grow: 1;
 }
 .monkey-option h2 {
@@ -20,7 +19,9 @@
   flex-grow: 1;
   font-size:50px;
   font-weight:bold;
+  width:50px;
 }
 #info-display {
+  width:150px;
   flex-grow: 1;
 }

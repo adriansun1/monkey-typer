@@ -1,5 +1,6 @@
 import React from "react";
 import FallingBananaHome from "./FallingBananaHome.jsx"
+import '../css/Main.css'
 
 const Banana = props => {
 

@@ -7,7 +7,8 @@
 }
 
 #market {
-  background-color: maroon;
+  background-color: #EEE5E9;
+  border:3px solid #181818;
   flex-grow: 0.5;
   height: 100%;
 }
@@ -20,7 +21,6 @@
 }
 
 #banana-wrap {
-  background-color: lightgrey;
   flex-grow: 0.5;
   height: 15em;
   text-align: center;
@@ -39,6 +39,11 @@
   -webkit-animation: drop 3s infinite ease-in;
   width: 40px;
   z-index: 1;
+}
+#market h3{
+  font-size:50px;
+  margin:0;
+  padding:0;
 }
 
 @-webkit-keyframes spin {
