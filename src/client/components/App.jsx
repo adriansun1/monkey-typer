@@ -6,8 +6,6 @@ import "../css/App.css";
 import TypeGame from "../game_logic/TypeGame.js";
 import shittyDB from "../../server/db/shittydb.json";
 import BookButtons from "./BookButtons.jsx";
-import "../img/chimp-monkey.jpg";
-import "../img/smart-monkey.jpg";
 const chimp = require("../img/chimp-monkey.jpg");
 const smart = require("../img/smart-monkey.jpg");
 

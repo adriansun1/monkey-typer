@@ -1,48 +1,64 @@
-
 .monkey-display {
   background-color: white;
   height: 10em;
   border: 3px solid yellow;
-  position:relative;
-  margin:5px;
+  position: relative;
+  margin: 5px;
 }
-
 
 #market {
   background-color: maroon;
   flex-grow: 0.5;
-  height:100%;
+  height: 100%;
 }
 
 #market-wrap {
   background-color: green;
   display: flex;
-  align-items:top;
-  height:30em;
+  align-items: top;
+  height: 30em;
 }
 
-#banana-wrap{
+#banana-wrap {
   background-color: lightgrey;
   flex-grow: 0.5;
-  height:15em;
+  height: 15em;
   text-align: center;
 }
 
-#banana{
+#banana {
   display: block;
-  margin:auto;
-  padding:0;
-  height:100%;
+  margin: auto;
+  padding: 0;
+  height: 100%;
+  z-index: 2;
   -webkit-animation: spin 3s infinite linear;
 }
 
-@-webkit-keyframes spin {
-  0%  {-webkit-transform: rotate(0deg);}
-  100% {-webkit-transform: rotate(360deg);}   
+.falling-banana {
+  -webkit-animation: drop 3s infinite ease-in;
+  width: 40px;
+  z-index: 1;
 }
-/* @-webkit-keyframes shake {
-  0%  {-webkit-transform: translate(1em,0);}
-  100%  {-webkit-transform: translate(0,10em);}
-} */
 
-
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes drop {
+  from {
+    transform : translateY(0em);
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  to {
+    transform : translateY(30em);
+    opacity: 0;
+  }
+}
