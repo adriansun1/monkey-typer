@@ -6,6 +6,7 @@
     "start": "nodemon ./src/server",
     "wServer": "webpack-dev-server --mode production --hot --open",
     "wBuild": "webpack --mode production",
+    "wjson": "webpack --json > stats.json",
     "test": "jest",
     "testV": "jest --verbose"
   },
@@ -32,6 +33,7 @@
     "style": "^0.0.3",
     "url-loader": "^1.1.2",
     "webpack": "^4.26.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
